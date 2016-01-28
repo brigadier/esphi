@@ -1,0 +1,6 @@
+-define(SOPHIA_BINARY, 0).
+-define(SOPHIA_INT, 1).
+-define(SOPHIA_NOPREFIX, 0).
+-define(SOPHIA_COUNTER, "__COUNTER__").
+-define(SOPHIA_KEY_ONLY, 0).
+-define(SOPHIA_FULL_OBJECT, 1).
