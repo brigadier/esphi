@@ -153,12 +153,11 @@ Transactions
 Transactions can span multiple tables. Optimistic locking, so if there are two tranactions updating
 the same keys, the second one will be automatically rolled back on commit.
 Possible errors of commit:
-`{error, disposed}` - Transaction has been already disposed;
-`{error, rolled_back}` - Transaction rolled back because of conflict with another transaction;
-`{error, lock}` - Deadlocked with another transaction. You can manually roll back some of locked;
-`{error, busy}` - The transaction is about to get commited by another process
+`{error, disposed}` - Transaction has been already disposed;  
+`{error, rolled_back}` - Transaction rolled back because of conflict with another transaction;  
+`{error, lock}` - Deadlocked with another transaction. You can manually roll back some of locked;  
+`{error, busy}` - The transaction is about to get commited by another process  
 
-transactions and repeat commit again.
 
 ```Erlang
 {ok, A1} = esphi:esphi_transaction_begin(Db).
@@ -180,13 +179,13 @@ Cursors
 -----------
 One way only, ascending and descending order, with optional prefix filter for key (for binary keys only).
 Allowed orders:
-`>=` - traverse with increasing order
-`>` - traverse with increasing order, skip first key for prefix
-`<=` - traverse with decreasing order
-`<` - traverse with decreasing order, skip first key for prefix
+`>=` - traverse with increasing order  
+`>` - traverse with increasing order, skip first key for prefix  
+`<=` - traverse with decreasing order  
+`<` - traverse with decreasing order, skip first key for prefix  
 The second parameter in the `esphi_cursor_next`: `0` to return just key, `1` to return both key and value.
 The third and fourth parameters have the same meaning as the last parameter in `esphi_get` function, for
-key (former) and for value (latter).
+key (former) and for value (latter).  
 Put `0` in the second parameter of the `esphi_cursor_open` if you don't want to do prefix filter (for
 example for the tables with `int` keys you can't do prefix seek even if you want so). Put `""` in the
 last parameter if you don't want to do seek.
@@ -206,7 +205,7 @@ stop = esphi:esphi_cursor_next(C2, 1, 0, 0).
 Backup
 -----------
 Backups are async. Wait for the previous backup to finish its' job before running the next one. See
-http://sophia.systems/v2.1/conf/backup.html and http://sophia.systems/v2.1/admin/backup.html
+http://sophia.systems/v2.1/conf/backup.html and http://sophia.systems/v2.1/admin/backup.html  
 You must set `"backup.path"` parameter in `esphi_db_open`, else backups won't work at all. 
 
 ```Erlang
