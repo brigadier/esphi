@@ -50,6 +50,7 @@ What works (in Sophia terms):
 What is not implemented yet:
 ---------
   * Point-in-Time Views
+  * Multikeys
   * Function and object configuration parameters
   * Anything async
   * Sync backups
