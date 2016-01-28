@@ -136,7 +136,7 @@ Unlike in Mnesia, it is impossible to get the result of increment immediatelly, 
 read. Moreover, if you think about using transactions to do update_counter and then read - don't. You will
 get a lot of automatic rollbacks under the load, as transactions use optimistic locking and will
 refuse to commit if value has been changed by another transaction. So use these counters for
-counting likes, not for generating sequences of unique IDs.
+counting likes, not for generating sequences of unique IDs. For sequences serialize it with a `gen_server`.  
 Under the hood the counters are implemented with Upsert feature of the Sophia. Don't forget to configure
 the table, which is going to be used to store counters, with the
 `"db.[table].index.upsert" => "__COUNTER__"` parameter.
