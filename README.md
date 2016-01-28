@@ -151,8 +151,8 @@ You may also use counters with transactions.
 Transactions
 ------------
 Transactions can span multiple tables. Optimistic locking, so if there are two tranactions updating
-the same keys, the second one will be automatically rolled back on commit.
-Possible errors of commit:
+the same keys, the second one will be automatically rolled back on commit.  
+Possible errors of commit:  
 `{error, disposed}` - Transaction has been already disposed;  
 `{error, rolled_back}` - Transaction rolled back because of conflict with another transaction;  
 `{error, lock}` - Deadlocked with another transaction. You can manually roll back some of locked;  
@@ -177,8 +177,8 @@ ok = esphi:esphi_transaction_rollback(A3).
 
 Cursors
 -----------
-One way only, ascending and descending order, with optional prefix filter for key (for binary keys only).
-Allowed orders:
+One way only, ascending and descending order, with optional prefix filter for key (for binary keys only).  
+Allowed orders:  
 `>=` - traverse with increasing order  
 `>` - traverse with increasing order, skip first key for prefix  
 `<=` - traverse with decreasing order  
