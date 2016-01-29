@@ -156,7 +156,8 @@ the same keys, the second one will be automatically rolled back on commit.
 Possible errors of commit:  
 `{error, disposed}` - Transaction has been already disposed;  
 `{error, rolled_back}` - Transaction rolled back because of conflict with another transaction;  
-`{error, lock}` - Deadlocked with another transaction. You can manually roll back some of locked;  
+`{error, lock}` - Deadlocked with another transaction. You can manually roll back some of the locked
+transactions and repeat commit again;  
 `{error, busy}` - The transaction is about to get commited by another process  
 
 
